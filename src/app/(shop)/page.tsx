@@ -1,11 +1,16 @@
-import { titleFont } from "@/config/font";
-import Image from "next/image";
+import ProductGrid from "@/components/products/product-grid/ProductGrid";
+import Title from "@/components/ui/title/Title";
+import { initialData } from "@/seed/seed";
+
+const products = initialData.products;
+
 
 export default function Home() {
   return (
-    <main className="">
-      <h1 className="font-bold">Shop</h1>
-      <h2 className={titleFont.className}>Página de inicio</h2>
-    </main>
+    <>
+      <Title title="Tienda Online" subtitle="Página de inicio" />
+      <ProductGrid products={products} />
+    </>
+
   );
 }
