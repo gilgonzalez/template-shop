@@ -3,6 +3,7 @@ import { Product } from '@/interfaces';
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
+import { cn } from '@/utils/cn';
 
 interface Props {
   product: Product;
@@ -11,14 +12,14 @@ interface Props {
 const ProductGridItem = ({product}: Props) => {
   const [displayImage, setDisplayImage] = useState(product.images[0])
   return (
-    <div className='rounded-md overflow-hidden fade-in'>
+    <div className='rounded-md bg-sky-50  overflow-hidden fade-in'>
       <Link href={`/product/${product.slug}`} className='transition-all duration-300'>
         <Image
           src={`/products/${displayImage}`}
           alt={product.title}
           width={500}
           height={500}
-          className='w-full object-cover'
+          className={cn('w-full object-cover', displayImage === product.images[1] && 'fade-in')}
           onMouseEnter={() => setDisplayImage(product.images[1])}
           onMouseLeave={() => setDisplayImage(product.images[0])} 
         />

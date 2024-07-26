@@ -1,12 +1,18 @@
+'use client'
 import { titleFont } from '@/config/font'
+import { useSidebarStore } from '@/store'
+import { cn } from '@/utils/cn'
 import Link from 'next/link'
+import { useParams } from 'next/navigation'
 import React from 'react'
-import { CiShoppingCart } from 'react-icons/ci'
 import { FiShoppingCart } from 'react-icons/fi'
 import { IoIosMenu } from 'react-icons/io'
 import { IoSearch } from 'react-icons/io5'
 
 const TopMenu = () => {
+  const openSidebar = useSidebarStore((state) => state.openSidebar)
+  const {id} = useParams()
+  console.log({id})
   return (
     <nav className='flex px-5 justify-between items-center w-full'>
       {/* Logo */}
@@ -19,17 +25,17 @@ const TopMenu = () => {
       {/* Menu */}
       <div className='items-center gap-5 hidden sm:flex'>
         <Link href="/category/men" 
-          className='m-2 p-2 rounded-md transition-all hover:bg-gray-100'
+          className={cn('m-2 p-2 rounded-md transition-all hover:bg-sky-200',id === "men" && "rounded bg-sky-200 transition-all ")}
         >
           <span className='text-black'>Hombres</span>
         </Link>
         <Link href="/category/women"
-          className='m-2 p-2 rounded-md transition-all hover:bg-gray-100'
+          className={cn('m-2 p-2 rounded-md transition-all hover:bg-sky-200',id === "women" && "rounded bg-sky-200 transition-all ")}
         >
           <span className='text-black'>Mujeres</span>
         </Link>
         <Link href="/category/child"
-          className='m-2 p-2 rounded-md transition-all hover:bg-gray-100'
+          className={cn('m-2 p-2 rounded-md transition-all hover:bg-sky-200',id === "child" && "rounded bg-sky-200 transition-all ")}
         >
           <span className='text-black'>Niños</span>
         </Link>
@@ -48,7 +54,7 @@ const TopMenu = () => {
         </div>
         </Link>
         <button className='m-2 p-2 rounded-md transition-all hover:bg-gray-100'>
-        <IoIosMenu size={32} className='text-black' />
+        <IoIosMenu onClick={openSidebar} size={32} className='text-black' />
         </button>
       </div>
     </nav>

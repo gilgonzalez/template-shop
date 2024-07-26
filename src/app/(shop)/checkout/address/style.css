@@ -1,0 +1,10 @@
+.phone-input input {
+  background-color: rgb(229 231 235); /* Cambia el color de fondo *
+  border: 1px solid #ccc; /* Ajusta el borde */
+  border-radius: 4px; /* Ajusta el borde redondeado */
+}
+.phone-input input:focus {
+  border-color: transparent; /* Hace el borde transparente */
+  box-shadow: none; /* Elimina cualquier sombra */
+  outline: none; /* Elimina el borde de enfoque predeterminado del navegador */
+}
