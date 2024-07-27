@@ -1,7 +1,7 @@
 
 'use client'
-import Title from '@/components/ui/title/Title';
 import Link from 'next/link';
+import { Title } from '@/components';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css'
 import './style.css'

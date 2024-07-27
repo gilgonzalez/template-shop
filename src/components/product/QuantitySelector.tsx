@@ -31,13 +31,13 @@ export const QuantitySelector = ({quantity}: Props) => {
     <div className='flex'>
       <Toaster richColors/>
         <button onClick={handleDecrement}>
-          <IoRemoveOutline size={24} />
+          <IoRemoveOutline size={18} />
         </button>
-        <span className='text-lg mx-4 px-6 bg-gray-200 text-center flex items-center justify-center rounded-md py-2'>
+        <span className='text-lg mx-2 px-2 lg:mx-4 lg:px-6 bg-gray-200 text-center flex items-center justify-center rounded-md py-2'>
           {count}
         </span>
         <button onClick={handleIncrement}>
-          <IoAddOutline size={24} />
+          <IoAddOutline size={18} />
         </button>
     </div>
   )

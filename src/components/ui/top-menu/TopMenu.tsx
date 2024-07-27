@@ -12,7 +12,6 @@ import { IoSearch } from 'react-icons/io5'
 const TopMenu = () => {
   const openSidebar = useSidebarStore((state) => state.openSidebar)
   const {id} = useParams()
-  console.log({id})
   return (
     <nav className='flex px-5 justify-between items-center w-full'>
       {/* Logo */}

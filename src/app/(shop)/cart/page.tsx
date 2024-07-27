@@ -1,13 +1,17 @@
-import Title from "@/components/ui/title/Title";
 import { initialData } from "@/seed/seed";
 import Link from "next/link";
 import { IoTicket } from "react-icons/io5";
-import Image from "next/image";
-import { ProductCart, QuantitySelector } from "@/components";
+import { ProductCart} from "@/components";
+import { Title } from "@/components";
+import { redirect } from "next/navigation";
 
 const productsInCart = initialData.products.slice(0, 3);
 
 export default function CartPage() {
+
+  if(productsInCart.length === 0) {
+    redirect('/empty')
+  }
 
   const total = productsInCart.reduce((acc, product) => {
     return acc + product.price;
