@@ -8,6 +8,8 @@
 2. Copiar el archivo ```.env.template``` a ```.env``` y modificar los valores de la base de datos
 3. Instalar dependencias ```bun install```
 4. Levantar la base de datos de postgres ```docker-compose up -d```
-5. Correr el servidor de desarrollo ```bun run dev```
+5. Correr migraciones de prisma ```bunx prisma migrate dev```
+6. Correr seed de prisma ```bun run seed```
+7. Correr el servidor de desarrollo ```bun run dev```
 
 ## Correr en prod
